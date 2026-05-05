@@ -1,0 +1,19 @@
+# Read initial set A
+n_a = int(input())
+set_a = set(map(int, input().split()))
+
+# Read the number of operations
+num_ops = int(input())
+
+for _ in range(num_ops):
+    # Read the operation name and the length of the next set
+    operation_name, _ = input().split()
+    # Read the other set
+    other_set = set(map(int, input().split()))
+    
+    # Use getattr to dynamically call the mutation method based on the string name
+    # This is more efficient than a long if/elif chain
+    getattr(set_a, operation_name)(other_set)
+
+# Output the sum of the mutated set
+print(sum(set_a))
