@@ -1,0 +1,13 @@
+
+
+def person_lister(f):
+    def inner(people):
+        # 1. Sort the list based on the age (index 2)
+        # Note: age is read as a string, so convert to int for proper sorting
+        sorted_people = sorted(people, key=lambda x: int(x[2]))
+        
+        # 2. Map the formatting function 'f' over the sorted list
+        return map(f, sorted_people)
+    return inner
+
+
