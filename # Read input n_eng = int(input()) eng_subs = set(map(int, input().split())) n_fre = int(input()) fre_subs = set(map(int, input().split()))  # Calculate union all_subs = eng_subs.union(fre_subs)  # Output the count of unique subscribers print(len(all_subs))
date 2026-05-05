@@ -1,0 +1,35 @@
+# Read the number of elements for the initial set
+n = int(input())
+
+# Read the initial elements as a string and convert them to a set of integers
+# The map function converts each string element to an integer
+s = set(map(int, input().split()))
+
+# Read the number of commands
+num_commands = int(input())
+
+# Process each command
+for _ in range(num_commands):
+    # Read the command line
+    command_line = input().split()
+    # The first part is the operation name
+    operation = command_line[0]
+
+    if operation == 'pop':
+        # Perform the pop operation (no argument needed)
+        if s: # Check if the set is not empty before popping to avoid KeyError
+            s.pop()
+    elif operation == 'remove':
+        # Get the argument and perform the remove operation
+        if len(command_line) > 1:
+            value = int(command_line[1])
+            if value in s: # Check if value exists before removing to avoid KeyError
+                s.remove(value)
+    elif operation == 'discard':
+        # Get the argument and perform the discard operation
+        if len(command_line) > 1:
+            value = int(command_line[1])
+            s.discard(value)
+
+# Print the sum of the remaining elements in the set
+print(sum(s))
