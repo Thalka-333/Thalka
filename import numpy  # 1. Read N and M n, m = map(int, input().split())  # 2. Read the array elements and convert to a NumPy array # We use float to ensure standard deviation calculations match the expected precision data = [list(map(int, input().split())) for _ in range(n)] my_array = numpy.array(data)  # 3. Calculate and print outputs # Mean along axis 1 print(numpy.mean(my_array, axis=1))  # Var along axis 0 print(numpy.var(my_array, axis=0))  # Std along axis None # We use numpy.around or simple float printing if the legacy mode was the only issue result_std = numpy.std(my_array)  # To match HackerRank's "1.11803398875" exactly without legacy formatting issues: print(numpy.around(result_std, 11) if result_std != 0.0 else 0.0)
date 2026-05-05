@@ -1,0 +1,7 @@
+
+
+# 1. Define the function first
+def arrays(arr):
+    # Reverse the list and convert to a numpy array of type float
+    return numpy.array(arr[::-1], float)
+
