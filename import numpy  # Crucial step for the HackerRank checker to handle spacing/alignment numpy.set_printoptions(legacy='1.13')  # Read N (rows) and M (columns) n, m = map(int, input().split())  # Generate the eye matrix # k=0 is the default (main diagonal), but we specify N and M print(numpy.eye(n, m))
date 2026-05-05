@@ -1,0 +1,12 @@
+import numpy
+
+# Step 1: Read the dimensions from input
+# We convert them into a tuple, as NumPy shape arguments must be tuples
+shape = tuple(map(int, input().split()))
+
+# Step 2: Print the array filled with zeros
+# We specify dtype=int to ensure the output matches the sample (no decimal points)
+print(numpy.zeros(shape, dtype=int))
+
+# Step 3: Print the array filled with ones
+print(numpy.ones(shape, dtype=int))
