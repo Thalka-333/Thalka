@@ -1,0 +1,19 @@
+import numpy
+
+# This handles the specific spacing in [[ 7 10]
+numpy.set_printoptions(legacy='1.13')
+
+# Read the dimension N
+n = int(input())
+
+# Read Array A
+a_data = [list(map(int, input().split())) for _ in range(n)]
+A = numpy.array(a_data)
+
+# Read Array B
+b_data = [list(map(int, input().split())) for _ in range(n)]
+B = numpy.array(b_data)
+
+# Compute Matrix Product
+# For 2D arrays, numpy.dot performs matrix multiplication
+print(numpy.dot(A, B))
