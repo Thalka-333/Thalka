@@ -1,0 +1,14 @@
+# Step 1: Read input for English newspaper subscribers
+num_english = int(input())
+english_subscribers = set(map(int, input().split()))
+
+# Step 2: Read input for French newspaper subscribers
+num_french = int(input())
+french_subscribers = set(map(int, input().split()))
+
+# Step 3: Find students subscribed ONLY to English
+# This removes students who are in both sets from the English set
+only_english = english_subscribers.difference(french_subscribers)
+
+# Step 4: Output the count
+print(len(only_english))
