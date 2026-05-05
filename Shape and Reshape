@@ -1,0 +1,12 @@
+import numpy
+
+# Step 1: Read the space-separated input and convert to a list of integers
+# input().split() handles multiple spaces automatically
+arr = list(map(int, input().split()))
+
+# Step 2: Convert the list to a 1D NumPy array
+my_array = numpy.array(arr)
+
+# Step 3: Use numpy.reshape to change the dimensions to 3x3
+# Note: You can also use my_array.reshape(3, 3)
+print(numpy.reshape(my_array, (3, 3)))
