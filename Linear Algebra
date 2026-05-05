@@ -1,0 +1,15 @@
+import numpy
+
+# Read the dimension N
+n = int(input())
+
+# Read the N x N matrix data
+data = [list(map(float, input().split())) for _ in range(n)]
+matrix = numpy.array(data)
+
+# Calculate the determinant
+det_value = numpy.linalg.det(matrix)
+
+# Print the result rounded to 2 decimal places
+print(round(det_value, 2))
+
