@@ -1,0 +1,20 @@
+import math
+
+# Read the lengths of the sides
+ab = float(input())
+bc = float(input())
+
+# Calculate the angle in radians
+# atan2 is more robust than atan as it handles division by zero
+angle_rad = math.atan2(ab, bc)
+
+# Convert to degrees
+angle_deg = math.degrees(angle_rad)
+
+# Round to nearest integer manually to avoid "round-half-to-even" issues
+# Adding 0.5 and taking the floor is a safe way to round .5 up
+result = int(angle_deg + 0.5)
+
+# Output using the Unicode escape for the degree symbol to remain ASCII safe
+# \u00b0 is the code for the degree symbol
+print(f"{result}\u00b0")
