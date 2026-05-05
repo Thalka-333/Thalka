@@ -1,0 +1,8 @@
+
+
+def wrap(string, max_width):
+    # textwrap.fill() takes the string and wraps it to max_width,
+    # returning a single string with \n characters already inserted.
+    return textwrap.fill(string, max_width)
+
+
