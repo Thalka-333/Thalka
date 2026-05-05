@@ -1,0 +1,27 @@
+import re
+
+def is_valid_float(s):
+    # Step 1: Regex validation
+    # ^[+-]?        - Optional leading + or -
+    # \d*           - Zero or more digits before the dot
+    # \.            - Exactly one dot symbol
+    # \d+           - At least one digit after the dot (Requirement: at least 1 decimal)
+    # $             - End of string
+    pattern = r'^[+-]?\d*\.\d+$'
+    
+    # Step 2: Check regex and try float conversion
+    try:
+        if re.match(pattern, s):
+            float(s)
+            return True
+        else:
+            return False
+    except ValueError:
+        return False
+
+# Read number of test cases
+t = int(input())
+
+for _ in range(t):
+    s = input().strip()
+    print(is_valid_float(s))
