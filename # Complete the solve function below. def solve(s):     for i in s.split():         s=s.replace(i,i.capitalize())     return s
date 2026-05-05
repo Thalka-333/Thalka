@@ -1,0 +1,4 @@
+def mutate_string(string, position, character):
+    # Slice the string before the position, add the new character, 
+    # and append the rest of the string from position + 1 onwards.
+    return string[:position] + character + string[position + 1:]
