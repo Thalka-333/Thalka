@@ -1,0 +1,17 @@
+import re
+
+# Read the number of test cases
+n = int(input().strip())
+
+# The regex pattern
+pattern = r"^[789]\d{9}$"
+
+for _ in range(n):
+    # Read each input string
+    s = input().strip()
+    
+    # re.match returns a match object if valid, None if not
+    if re.match(pattern, s):
+        print("YES")
+    else:
+        print("NO")
