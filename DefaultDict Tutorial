@@ -1,0 +1,19 @@
+from collections import defaultdict
+
+# Read n and m
+n, m = map(int, input().split())
+
+# Use a defaultdict of lists to store indices of each word in Group A
+group_a = defaultdict(list)
+
+for i in range(1, n + 1):
+    word = input().strip()
+    group_a[word].append(i)
+
+# Process Group B and print results
+for _ in range(m):
+    word_b = input().strip()
+    if word_b in group_a:
+        print(*(group_a[word_b]))
+    else:
+        print("-1")
