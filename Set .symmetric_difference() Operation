@@ -1,0 +1,14 @@
+# Read input for English newspaper
+n_english = int(input())
+set_english = set(map(int, input().split()))
+
+# Read input for French newspaper
+n_french = int(input())
+set_french = set(map(int, input().split()))
+
+# Calculate the symmetric difference
+# This keeps elements in either set, but removes the intersection
+result_set = set_english.symmetric_difference(set_french)
+
+# Output the total count
+print(len(result_set))
