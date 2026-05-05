@@ -1,0 +1,29 @@
+from html.parser import HTMLParser
+
+# Define the custom parser class
+class MyHTMLParser(HTMLParser):
+    def handle_starttag(self, tag, attrs):
+        print(f"Start : {tag}")
+        for attr in attrs:
+            # attr is a tuple: (name, value)
+            print(f"-> {attr[0]} > {attr[1]}")
+
+    def handle_endtag(self, tag):
+        print(f"End   : {tag}")
+
+    def handle_startendtag(self, tag, attrs):
+        print(f"Empty : {tag}")
+        for attr in attrs:
+            print(f"-> {attr[0]} > {attr[1]}")
+
+# Read the number of lines
+n = int(input())
+
+# Join all lines into one string to handle multi-line HTML/comments
+html_code = ""
+for _ in range(n):
+    html_code += input() + "\n"
+
+# Instantiate and feed the parser
+parser = MyHTMLParser()
+parser.feed(html_code)
