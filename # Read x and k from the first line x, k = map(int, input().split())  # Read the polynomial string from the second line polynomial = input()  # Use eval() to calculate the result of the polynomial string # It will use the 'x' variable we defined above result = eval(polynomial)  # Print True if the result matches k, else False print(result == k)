@@ -1,0 +1,22 @@
+def calculate_averages():
+    # Read N (Students) and X (Subjects)
+    try:
+        n, x = map(int, input().split())
+        
+        # Store marks for each subject as lists of floats
+        subject_marks = []
+        for _ in range(x):
+            subject_marks.append(list(map(float, input().split())))
+        
+        # Use zip(*) to group marks by student
+        # Each 'student_scores' will be a tuple of marks for one student
+        for student_scores in zip(*subject_marks):
+            # Calculate and print the average
+            average = sum(student_scores) / x
+            print(f"{average:.1f}")
+            
+    except EOFError:
+        pass
+
+if __name__ == "__main__":
+    calculate_averages()
