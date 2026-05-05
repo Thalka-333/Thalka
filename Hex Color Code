@@ -1,0 +1,22 @@
+import re
+import sys
+
+# Regex breakdown:
+# (?<=.) - Lookbehind: ensures there is at least one character before the '#'
+#          This effectively ignores selectors starting at the beginning of a line.
+# #[0-9a-fA-F]{3,6} - Matches '#' followed by 3 or 6 hex characters.
+# (?=[;,\s\)]) - Lookahead: ensures the code ends with a semicolon, comma, space, or bracket.
+pattern = r'(?<=.)(#[0-9a-fA-F]{6}|#[0-9a-fA-F]{3})'
+
+# Read number of lines
+n = int(input())
+
+# Process each line
+for _ in range(n):
+    line = input()
+    # Find all matches in the current line
+    matches = re.findall(pattern, line)
+    
+    if matches:
+        for color in matches:
+            print(color)
