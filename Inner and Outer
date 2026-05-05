@@ -1,0 +1,14 @@
+import numpy
+
+# This ensures the output matches the sample's spacing [ [0 0]...
+numpy.set_printoptions(legacy='1.13')
+
+# Read Array A and B from space-separated input
+A = numpy.array(input().split(), int)
+B = numpy.array(input().split(), int)
+
+# 1. Compute and print the Inner Product
+print(numpy.inner(A, B))
+
+# 2. Compute and print the Outer Product
+print(numpy.outer(A, B))
