@@ -1,0 +1,21 @@
+import re
+
+# Read the main string (S) and the substring to find (k)
+s = input()
+k = input()
+
+# Pattern: Positive Lookahead (?=...) 
+# This matches the position before 'k' without consuming 'k'
+pattern = re.compile(rf'(?=({k}))')
+
+# Find all matches
+matches = list(pattern.finditer(s))
+
+if not matches:
+    print("(-1, -1)")
+else:
+    for m in matches:
+        # start(): index where k begins
+        # end(): index where k would end (start + len(k) - 1)
+        # We subtract 1 from the end because the task asks for (start, end-1)
+        print(f"({m.start()}, {m.start() + len(k) - 1})")
