@@ -1,0 +1,21 @@
+# Define the lambda function to cube a number
+cube = lambda x: x**3
+
+def fibonacci(n):
+    # Handle edge cases for 0 and 1
+    if n == 0:
+        return []
+    elif n == 1:
+        return [0]
+    
+    # Initialize the first two Fibonacci numbers
+    fib = [0, 1]
+    
+    # Generate the rest of the sequence up to n
+    while len(fib) < n:
+        fib.append(fib[-1] + fib[-2])
+        
+    return fib
+
+
+
