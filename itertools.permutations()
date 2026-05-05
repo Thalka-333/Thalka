@@ -1,0 +1,11 @@
+from itertools import permutations
+
+# Read string S and integer k
+s, k = input().split()
+
+# Sort string S and find permutations of length int(k)
+result = list(permutations(sorted(s), int(k)))
+
+# Join each tuple into a string and print on a new line
+for i in result:
+    print("".join(i))
