@@ -1,0 +1,20 @@
+# Read the number of elements for the first set (M)
+M = int(input())
+
+# Read the space-separated integers for the first set (a), convert to integers, and store in a set
+a = set(map(int, input().split()))
+
+# Read the number of elements for the second set (N)
+N = int(input())
+
+# Read the space-separated integers for the second set (b), convert to integers, and store in a set
+b = set(map(int, input().split()))
+
+# Calculate the symmetric difference using the symmetric_difference() method
+# Alternatively, the ^ operator can be used: symmetric_diff = a ^ b
+symmetric_diff = a.symmetric_difference(b)
+
+# Convert the resulting set to a list, sort it in ascending order, and print each element
+for num in sorted(list(symmetric_diff)):
+    print(num)
+
