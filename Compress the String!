@@ -1,0 +1,8 @@
+from itertools import groupby
+
+# Read the input string
+s = input()
+
+# Group consecutive characters and format as (count, character)
+for key, group in groupby(s):
+    print(f"({len(list(group))}, {key})", end=" ")
