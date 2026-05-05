@@ -1,0 +1,24 @@
+from collections import deque
+
+for _ in range(int(input())):
+    n = int(input())
+    blocks = deque(map(int, input().split()))
+    
+    last_stacked = float('inf')
+    possible = True
+    
+    while blocks:
+        # Pick the larger of the two ends
+        if blocks[0] >= blocks[-1]:
+            current = blocks.popleft()
+        else:
+            current = blocks.pop()
+            
+        # Check if it fits the stacking rule
+        if current <= last_stacked:
+            last_stacked = current
+        else:
+            possible = False
+            break
+            
+    print("Yes" if possible else "No")
