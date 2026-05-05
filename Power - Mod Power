@@ -1,0 +1,10 @@
+# Read three integers
+a = int(input())
+b = int(input())
+m = int(input())
+
+# Output power
+print(pow(a, b))
+
+# Output modular exponentiation
+print(pow(a, b, m))
