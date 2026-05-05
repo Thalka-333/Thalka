@@ -1,0 +1,27 @@
+import re
+import sys
+
+# Read N (rows) and M (columns)
+n, m = map(int, input().split())
+
+# Read the matrix rows
+matrix = [input() for _ in range(n)]
+
+# Step 1: Decode the script by reading column by column
+# zip(*matrix) groups the first character of every row, then the second, etc.
+decoded_list = []
+for column in zip(*matrix):
+    decoded_list.append("".join(column))
+
+decoded_string = "".join(decoded_list)
+
+# Step 2: Use regex to replace symbols/spaces between alphanumeric characters
+# (?<=\w)  - Lookbehind: ensures an alphanumeric character is before
+# [^\w]+   - Matches one or more non-alphanumeric characters (symbols/spaces)
+# (?=\w)   - Lookahead: ensures an alphanumeric character is after
+pattern = r'(?<=\w)([^\w]+)(?=\w)'
+
+# Replace the matched groups with a single space
+final_output = re.sub(pattern, ' ', decoded_string)
+
+print(final_output)
