@@ -1,0 +1,23 @@
+import numpy
+
+# Setting legacy printing to match specific HackerRank formatting if needed
+# numpy.set_printoptions(legacy='1.13')
+
+# Read N and M
+n, m = map(int, input().split())
+
+# Create the 2D array from input lines
+data = [list(map(int, input().split())) for _ in range(n)]
+my_array = numpy.array(data)
+
+# 1. Mean along axis 1
+print(numpy.mean(my_array, axis=1))
+
+# 2. Variance along axis 0
+print(numpy.var(my_array, axis=0))
+
+# 3. Standard Deviation along axis None (flattened)
+print(numpy.std(my_array, axis=None))
+
+
+
