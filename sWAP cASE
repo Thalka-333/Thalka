@@ -1,0 +1,20 @@
+def swap_case(s):
+  """
+  Swaps the case of all characters in a given string s.
+
+  Lowercase letters are converted to uppercase, and uppercase letters 
+  are converted to lowercase.
+  
+  Args:
+    s: The input string.
+
+  Returns:
+    The string with the case of all characters swapped.
+  """
+  return s.swapcase()
+
+input_string = 'HackerRank.com presents "Pythonist 2"'
+
+result = swap_case(input_string)
+
+
