@@ -1,0 +1,27 @@
+import re
+
+def transform_symbols():
+    # Read number of lines
+    try:
+        n = int(input())
+        
+        for _ in range(n):
+            line = input()
+            
+            # Replace ' && ' with ' and '
+            # We run it twice to handle cases where patterns are adjacent
+            line = re.sub(r"(?<= )&&(?= )", "and", line)
+            line = re.sub(r"(?<= )\|\|(?= )", "or", line)
+            
+            # For some test cases with multiple occurrences, 
+            # repeating the sub ensures overlapping boundaries are caught
+            line = re.sub(r"(?<= )&&(?= )", "and", line)
+            line = re.sub(r"(?<= )\|\|(?= )", "or", line)
+            
+            print(line)
+            
+    except EOFError:
+        pass
+
+if __name__ == "__main__":
+    transform_symbols()
