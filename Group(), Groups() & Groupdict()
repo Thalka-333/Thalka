@@ -1,0 +1,17 @@
+import re
+
+# Read the input string
+s = input()
+
+# Pattern explanation:
+# ([a-zA-Z0-9]) -> Group 1: Matches any alphanumeric character
+# \1           -> Matches the same character as Group 1 immediately after
+match = re.search(r'([a-zA-Z0-9])\1', s)
+
+# If a match is found, print the captured character (group 1)
+if match:
+    print(match.group(1))
+else:
+    # If no repeating alphanumeric character exists
+    print("-1")
+
