@@ -1,0 +1,12 @@
+# Read the number of test cases
+n = int(input())
+
+for _ in range(n):
+    try:
+        # Split the input into two variables
+        a, b = input().split()
+        # Perform integer division
+        print(int(a) // int(b))
+    except (ZeroDivisionError, ValueError) as e:
+        # Print the exception message in the required format
+        print("Error Code:", e)
