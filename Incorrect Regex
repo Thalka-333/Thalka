@@ -1,0 +1,20 @@
+import re
+
+def check_regex():
+    # Read the number of test cases
+    try:
+        t = int(raw_input())
+        for _ in range(t):
+            s = raw_input()
+            try:
+                # Attempt to compile the regex
+                re.compile(s)
+                print "True"
+            except re.error:
+                # If an error occurs, it is an invalid regex
+                print "False"
+    except EOFError:
+        pass
+
+if __name__ == "__main__":
+    check_regex()
