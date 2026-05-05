@@ -1,0 +1,22 @@
+import numpy
+
+# Step 1: Read N (rows) and M (columns)
+n, m = map(int, input().split())
+
+# Step 2: Create a 2D list by reading N rows
+# Each row is converted to a list of integers
+matrix = []
+for _ in range(n):
+    row = list(map(int, input().split()))
+    matrix.append(row)
+
+# Step 3: Convert the 2D list into a NumPy array
+my_array = numpy.array(matrix)
+
+# Step 4: Print the transpose
+# This flips the rows and columns
+print(numpy.transpose(my_array))
+
+# Step 5: Print the flattened array
+# This collapses the 2D array into a 1D array
+print(my_array.flatten())
