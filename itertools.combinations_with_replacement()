@@ -1,0 +1,11 @@
+from itertools import combinations_with_replacement
+
+# Read string S and integer k
+s, k = input().split()
+
+# Sort the string and generate combinations of size k with replacement
+result = combinations_with_replacement(sorted(s), int(k))
+
+# Join the tuples and print each on a new line
+for combo in result:
+    print("".join(combo))
