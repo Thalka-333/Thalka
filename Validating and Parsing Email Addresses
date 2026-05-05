@@ -1,0 +1,24 @@
+import re
+import email.utils
+
+# Define the regex pattern based on the requirements
+# [a-zA-Z] - Starts with a letter
+# [a-zA-Z0-9._-]* - Followed by alphanumeric, dot, underscore, or hyphen
+# @[a-zA-Z]+ - Domain contains only letters
+# \.[a-zA-Z]{1,3}$ - Extension is letters only, length 1-3
+pattern = r'^[a-zA-Z][a-zA-Z0-9._-]*@[a-zA-Z]+\.[a-zA-Z]{1,3}$'
+
+# Read number of inputs
+n = int(input())
+
+for _ in range(n):
+    # Parse the name and email from the input string
+    raw_input = input()
+    parsed_addr = email.utils.parseaddr(raw_input)
+    
+    # parsed_addr[1] contains the email address string
+    email_address = parsed_addr[1]
+    
+    # Check if the email matches our strict criteria
+    if re.match(pattern, email_address):
+        print(email.utils.formataddr(parsed_addr))
