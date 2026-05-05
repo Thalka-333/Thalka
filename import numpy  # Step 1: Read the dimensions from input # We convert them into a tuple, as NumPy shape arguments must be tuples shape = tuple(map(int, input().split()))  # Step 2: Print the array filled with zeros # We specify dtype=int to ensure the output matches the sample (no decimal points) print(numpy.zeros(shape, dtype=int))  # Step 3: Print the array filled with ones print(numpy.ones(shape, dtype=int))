@@ -1,0 +1,20 @@
+import numpy
+
+# Step 1: Read N, M, and P
+# N = rows of first array, M = rows of second array, P = columns
+n, m, p = map(int, input().split())
+
+# Step 2: Read the first array (N rows)
+array_1 = []
+for _ in range(n):
+    array_1.append(list(map(int, input().split())))
+
+# Step 3: Read the second array (M rows)
+array_2 = []
+for _ in range(m):
+    array_2.append(list(map(int, input().split())))
+
+# Step 4: Convert to NumPy arrays and concatenate
+# We use a tuple (array_1, array_2) as the first argument
+# axis=0 is the default (vertical stacking)
+print(numpy.concatenate((numpy.array(array_1), numpy.array(array_2)), axis=0))
