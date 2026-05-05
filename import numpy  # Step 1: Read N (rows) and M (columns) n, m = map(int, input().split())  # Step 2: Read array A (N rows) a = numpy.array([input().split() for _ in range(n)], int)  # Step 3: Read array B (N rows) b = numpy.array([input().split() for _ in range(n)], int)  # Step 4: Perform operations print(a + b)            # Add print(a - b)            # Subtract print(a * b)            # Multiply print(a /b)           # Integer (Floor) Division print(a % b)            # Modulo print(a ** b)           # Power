@@ -1,0 +1,11 @@
+import numpy
+
+# Crucial step for the HackerRank checker to handle spacing/alignment
+numpy.set_printoptions(legacy='1.13')
+
+# Read N (rows) and M (columns)
+n, m = map(int, input().split())
+
+# Generate the eye matrix
+# k=0 is the default (main diagonal), but we specify N and M
+print(numpy.eye(n, m))
