@@ -1,0 +1,13 @@
+# Read the group size K
+k = int(input())
+
+# Read the list of room numbers
+room_list = list(map(int, input().split()))
+
+# Method: Mathematical approach using Sets
+# Sum of unique rooms multiplied by K, minus the actual sum of the list, 
+# divided by (K-1) gives the Captain's room.
+room_set = set(room_list)
+captain_room = (sum(room_set) * k - sum(room_list)) // (k - 1)
+
+print(captain_room)
