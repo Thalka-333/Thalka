@@ -1,0 +1,12 @@
+# Read two integers from input
+a = int(input())
+b = int(input())
+
+# Output floor division
+print(a // b)
+
+# Output modulo
+print(a % b)
+
+# Output the divmod tuple
+print(divmod(a, b))
