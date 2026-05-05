@@ -1,0 +1,23 @@
+def sort_spreadsheet():
+    # Read N (rows) and M (attributes)
+    n, m = map(int, input().split())
+    
+    # Store all rows in a list
+    rows = []
+    for _ in range(n):
+        rows.append(list(map(int, input().split())))
+    
+    # Read the attribute index K to sort by
+    k = int(input())
+    
+    # Sort the list of rows using the Kth index as the key
+    # Python's sort is stable by default
+    rows.sort(key=lambda x: x[k])
+    
+    # Print the resulting table
+    for row in rows:
+        print(*(row))
+
+if __name__ == "__main__":
+    sort_spreadsheet()
+
