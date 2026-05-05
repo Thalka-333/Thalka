@@ -1,0 +1,16 @@
+def wrapper(f):
+    def fun(l):
+        # 1. Standardize each number in the list
+        # Extract only the last 10 digits to remove prefixes like 0, 91, or +91
+        standardized_list = []
+        for s in l:
+            clean_number = s[-10:]
+            formatted = "+91 " + clean_number[:5] + " " + clean_number[5:]
+            standardized_list.append(formatted)
+        
+        # 2. Pass the standardized list to the original sorting function
+        return f(standardized_list)
+    return fun
+
+
+
