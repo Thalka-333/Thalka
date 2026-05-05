@@ -1,0 +1,10 @@
+from collections import Counter
+
+# Sort the string first to handle alphabetical ties automatically
+s = sorted(input())
+
+# Count occurrences (Counter preserves the sorted order of keys)
+counts = Counter(s).most_common(3)
+
+for char, count in counts:
+    print(f"{char} {count}")
