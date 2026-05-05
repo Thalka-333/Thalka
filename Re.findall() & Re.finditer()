@@ -1,0 +1,21 @@
+import re
+
+# Define character sets
+vowels = "aeiou"
+consonants = "qwrtypsdfghjklzxcvbnm"
+
+# Build the regex pattern
+# {2,} ensures we find 2 or more occurrences
+# Re.I (Ignorecase) handles both upper and lower case
+pattern = r"(?<=[%s])([%s]{2,})(?=[%s])" % (consonants, vowels, consonants)
+
+# Find all matches
+# Since we used a capturing group (), findall returns just the vowels
+match = re.findall(pattern, input(), re.I)
+
+# Output results
+if match:
+    for m in match:
+        print(m)
+else:
+    print("-1")
