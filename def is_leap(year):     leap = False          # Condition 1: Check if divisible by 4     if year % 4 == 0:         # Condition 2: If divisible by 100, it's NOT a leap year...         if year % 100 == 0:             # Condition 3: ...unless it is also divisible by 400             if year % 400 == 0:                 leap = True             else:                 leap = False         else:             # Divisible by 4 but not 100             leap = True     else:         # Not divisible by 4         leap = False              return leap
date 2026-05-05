@@ -1,0 +1,34 @@
+import string
+
+def print_rangoli(size):
+    # Get all lowercase letters
+    alphabet = string.ascii_lowercase
+    
+    # Calculate the width of the rangoli
+    # Each letter (except the last) has a dash after it: (size * 2) - 1
+    # Then we account for the mirror: ((size * 2) - 1) * 2 - 1
+    width = (size * 4) - 3
+    
+    lines = []
+    
+    # Generate the top half and the middle line
+    for i in range(size):
+        # Slice the alphabet to get the required letters for the row
+        left_side = alphabet[size - 1 : size - 1 - i : -1]
+        right_side = alphabet[size - 1 - i : size]
+        
+        # Combine with dashes
+        row_letters = "-".join(left_side + right_side)
+        
+        # Center the row with dashes filling the width
+        lines.append(row_letters.center(width, "-"))
+    
+    # Create the full rangoli by mirroring the top half (excluding middle line)
+    # and joining with newlines
+    result = "\n".join(lines + lines[:-1][::-1])
+    print(result)
+
+# Example for Thalka Subair's assignment context
+# if __name__ == "__main__":
+#     n = int(input())
+#     print_rangoli(n)
