@@ -1,0 +1,11 @@
+# Read input
+n_eng = int(input())
+eng_subs = set(map(int, input().split()))
+n_fre = int(input())
+fre_subs = set(map(int, input().split()))
+
+# Calculate union
+all_subs = eng_subs.union(fre_subs)
+
+# Output the count of unique subscribers
+print(len(all_subs))
