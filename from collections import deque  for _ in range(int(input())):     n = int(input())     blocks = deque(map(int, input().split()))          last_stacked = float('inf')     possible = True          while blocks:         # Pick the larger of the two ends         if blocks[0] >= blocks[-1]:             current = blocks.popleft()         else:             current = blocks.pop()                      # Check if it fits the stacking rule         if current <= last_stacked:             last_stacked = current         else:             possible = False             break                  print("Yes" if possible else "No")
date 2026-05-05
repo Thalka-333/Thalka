@@ -1,0 +1,17 @@
+from collections import deque
+
+n = int(input())
+d = deque()
+
+for _ in range(n):
+    # Split input into method name and arguments (if any)
+    query = input().split()
+    method_name = query[0]
+    
+    # Use getattr to find the method and call it with arguments if provided
+    if len(query) > 1:
+        getattr(d, method_name)(query[1])
+    else:
+        getattr(d, method_name)()
+
+print(*(d))
