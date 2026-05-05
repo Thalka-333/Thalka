@@ -1,0 +1,20 @@
+import numpy
+
+# Step 1: Read N (rows) and M (columns)
+n, m = map(int, input().split())
+
+# Step 2: Read N rows of integers into a 2D list
+matrix = []
+for _ in range(n):
+    matrix.append(list(map(int, input().split())))
+
+# Step 3: Convert to a NumPy array
+my_array = numpy.array(matrix)
+
+# Step 4: Sum along axis 0 (Vertical sum)
+# Sample: [[1, 2], [3, 4]] -> [4, 6]
+sum_axis_0 = numpy.sum(my_array, axis=0)
+
+# Step 5: Product of the resulting sums
+# Sample: [4, 6] -> 4 * 6 = 24
+print(numpy.prod(sum_axis_0))
