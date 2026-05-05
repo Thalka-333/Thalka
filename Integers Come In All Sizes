@@ -1,0 +1,9 @@
+# Read input from four separate lines
+a = int(input())
+b = int(input())
+c = int(input())
+d = int(input())
+
+# Calculate and print the result
+# Python automatically handles the large integer size
+print(pow(a, b) + pow(c, d))
